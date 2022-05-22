@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{37069B37-DE2F-65A3-D9C7-7BF8E7B879E9}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MovementController.cs">
     <Files>
-      <File FileName="Assets/Scripts/MovementController.cs" Line="6" Column="2" />
+      <File FileName="Assets/Scripts/MovementController.cs" Line="15" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
