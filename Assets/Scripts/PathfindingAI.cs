@@ -5,7 +5,7 @@ public class PathfindingAI : MonoBehaviour
     public GameObject Player;
     private UnityEngine.AI.NavMeshAgent nav;
 
-    public static bool PlayerInRange;
+    private static bool PlayerInRange;
     int walkingRadius = 20;
     [SerializeField] int monsterSpeed = 5;
 
