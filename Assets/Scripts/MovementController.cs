@@ -54,17 +54,20 @@ public class MovementController : MonoBehaviour
 
     void PerformMovement(Vector3 movement)
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (!CollisionHandler.dead)
         {
-            movement = sprintingMovement;
-        }
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                movement = sprintingMovement;
+            }
 
-        else
-        {
-            movement = walkingMovement;
-        }
+            else
+            {
+                movement = walkingMovement;
+            }
 
-        rigidbody.velocity = transform.TransformDirection(movement);
+            rigidbody.velocity = transform.TransformDirection(movement);
+        }
     }
 
     void Rotate()
