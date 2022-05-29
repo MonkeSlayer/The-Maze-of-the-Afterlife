@@ -34,7 +34,7 @@ public class CollisionHandler : MonoBehaviour
                 break;
 
             case "Play Again":
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
                 break;
 
             case "Monster":
