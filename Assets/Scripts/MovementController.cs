@@ -6,8 +6,8 @@ using UnityEngine;
 public class MovementController : MonoBehaviour
 {
     [SerializeField] float playerVelocity = 600f;
-    [SerializeField] float rotationSpeed = 1000f;
-    [SerializeField] float sprint = 2f;
+    [SerializeField] float rotationSpeed = 800f;
+    [SerializeField] float sprint = 1.5f;
 
     Vector3 movement;
     Vector3 walkingMovement;
