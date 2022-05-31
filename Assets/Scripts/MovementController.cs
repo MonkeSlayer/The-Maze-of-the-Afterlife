@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    [SerializeField] float playerVelocity = 600f;
+    [SerializeField] float playerVelocity = 400f;
     [SerializeField] float rotationSpeed = 800f;
     [SerializeField] float sprint = 1.5f;
 
     Vector3 movement;
     Vector3 walkingMovement;
     Vector3 sprintingMovement;
+
+    public Vector3 turn;
 
     Rigidbody rigidbody;
 
@@ -29,14 +31,15 @@ public class MovementController : MonoBehaviour
     void FixedUpdate()
     {
         PerformMovement(walkingMovement);
+
     }
 
     void GetMovement()
     {
-        float walkingHorizontalAxis = Input.GetAxis("Horizontal") * Time.deltaTime
+        float walkingHorizontalAxis = Input.GetAxis("Horizontal") * Time.fixedDeltaTime
                     * playerVelocity;
 
-        float walkingVerticalAxis = Input.GetAxis("Vertical") * Time.deltaTime
+        float walkingVerticalAxis = Input.GetAxis("Vertical") * Time.fixedDeltaTime
             * playerVelocity;
 
         float sprintHorizontalAxis = walkingHorizontalAxis * sprint;
@@ -69,10 +72,7 @@ public class MovementController : MonoBehaviour
 
     void Rotate()
     {
-        float mousePosition = Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed;
-        Vector3 mouseX = new Vector3(0, mousePosition, 0);
-        Quaternion rotation = Quaternion.Euler(mouseX);
-
-        rigidbody.MoveRotation(rigidbody.rotation * rotation);
+        turn.x += Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed;
+        transform.localRotation = Quaternion.Euler(0, turn.x, 0);
     }
 }
